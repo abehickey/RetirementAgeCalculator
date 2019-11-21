@@ -35,7 +35,6 @@ def inputMonth():
             if userInput < 1 or userInput > 12:  # if not from 1 to 12 print message and ask for input again
                 print("Sorry, input must be a number from 1 to 12.")
                 continue
-            # break
         except ValueError:
             print("Not an integer! Try again.")
             continue
@@ -43,15 +42,20 @@ def inputMonth():
             return userInput
 
 
-birthYear = inputYear()
-birthMon = inputMonth()
-print()
+def main():
+    birthYear = inputYear()
+    birthMon = inputMonth()
+    print()
 
-age, mon = retireCalc.getAge(birthYear) #Get retirement age and month
-if mon == 0:
-    print("Age for obtaining full SSA benefits: ", age)
-else:
-    print("Age for obtaining full SSA benefits: ", age, "and", mon, "months")
+    age, mon = retireCalc.getAge(birthYear) #Get retirement age and month
+    if mon == 0:
+        print("Age for obtaining full SSA benefits: ", age)
+    else:
+        print("Age for obtaining full SSA benefits: ", age, "and", mon, "months")
 
-ssaYear, ssaMonth = retireCalc.getWhen(birthYear,birthMon,age,mon) #Determine when benefits can be obtained
-print("Full SSA benefits may be obtained " + ssaMonth + " " + str(ssaYear) + ".")
+    ssaYear, ssaMonth = retireCalc.getWhen(birthYear,birthMon,age,mon) #Determine when benefits can be obtained
+    print("Full SSA benefits may be obtained " + ssaMonth + " " + str(ssaYear) + ".")
+
+
+if __name__ == "__main__":
+    main()

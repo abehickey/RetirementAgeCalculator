@@ -31,6 +31,7 @@ Feature: Retirement Age Calculator
         | 1960       | 67        | 0          |
         | 2000       | 67        | 0          |
 
+
 #   Scenario Outline: Invalid age
 #     Given retirement.py has started
 #     When the invalid birth year "<birth_year>" is entered
