@@ -32,16 +32,16 @@ Feature: Retirement Age Calculator
         | 2000       | 67        | 0          |
 
 
-#   Scenario Outline: Invalid age
-#     Given retirement.py has started
-#     When the invalid birth year "<birth_year>" is entered
-#     Then an error is raised
-#
-#     Examples:
-#       | birth_year |
-#       | 1899       |
-#       | -1970      |
-#       | 1980.5     |
-#       | s1990      |
+   Scenario Outline: Invalid age
+     Given retirement.py has started
+     When the invalid birth year "<bad_year>" is entered
+     Then an error is raised
+
+     Examples:
+       | bad_year   |
+       | 1899       |
+       | -1970      |
+       | 1980.5     |
+       | s1990      |
 
 
