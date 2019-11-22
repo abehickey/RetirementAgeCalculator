@@ -1,6 +1,6 @@
 import pytest
 from pytest_bdd import scenarios, given, when, then
-from retireCalc import getAge
+from retire_calc import get_age
 
 
 EXTRA_TYPES = {
@@ -31,7 +31,7 @@ def birthyear(birth_year):
 
 @then('the age of retirement is "<age_years>" years and "<age_months>" months')
 def retirement_age(birthyear, age_years, age_months):
-    age, mon = getAge(birthyear)
+    age, mon = get_age(birthyear)
     assert age == age_years and mon == age_months
 
 

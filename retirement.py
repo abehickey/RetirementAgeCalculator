@@ -5,7 +5,7 @@
 # Description: This program calculates when someone will receive full Social Security Benefits
 #####################################################
 
-import retireCalc
+import retire_calc
 import datetime
 
 
@@ -47,13 +47,13 @@ def main():
     birthMon = inputMonth()
     print()
 
-    age, mon = retireCalc.getAge(birthYear) #Get retirement age and month
+    age, mon = retire_calc.get_age(birthYear) #Get retirement age and month
     if mon == 0:
         print("Age for obtaining full SSA benefits: ", age)
     else:
         print("Age for obtaining full SSA benefits: ", age, "and", mon, "months")
 
-    ssaYear, ssaMonth = retireCalc.getWhen(birthYear,birthMon,age,mon) #Determine when benefits can be obtained
+    ssaYear, ssaMonth = retire_calc.getWhen(birthYear, birthMon, age, mon) #Determine when benefits can be obtained
     print("Full SSA benefits may be obtained " + ssaMonth + " " + str(ssaYear) + ".")
 
 
